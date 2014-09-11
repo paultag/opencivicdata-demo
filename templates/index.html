@@ -29,6 +29,8 @@ function locate() {
             );
 
             $("#results").load("/lookup", {
+                "lat": lat,
+                "lon": lon,
             });
 
 
