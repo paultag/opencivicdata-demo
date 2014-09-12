@@ -1,12 +1,21 @@
 {% for leg in legs %}
     {{leg.name}}<br />
+    {{leg.id}}
     <ul>
 {% for membership in leg.memberships %}
+    {% if membership.organization.classification in ['upper', 'lower', 'legislature'] %}
     <li>
-    {{membership.label}} of {{membership.organization.name}}.  {% if membership.post %}
-    ({{membership.post.role}} for {{membership.post.label}})
+    {% if membership.label %}{{membership.label}}{% else %}Member{% endif %}
+    of
+    {{membership.organization.name}}.
+    {% if membership.post %}
+        ({{membership.post.role}} for {{membership.post.label}})
+    {% endif %}
+    {% if membership.start_date %}
+    From {{membership.start_date}} -- {{membership.end_date}}
     {% endif %}
     </li>
+    {% endif %}
 {% endfor %}
     </ul>
 {% endfor %}
