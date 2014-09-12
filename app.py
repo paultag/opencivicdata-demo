@@ -12,6 +12,7 @@ def index():
 @app.route("/lookup", methods=["POST"])
 def lookup():
     lat, lon = [request.form[x] for x in ['lat', 'lon']]
+    print(lat, lon)
     legs = api.people(lat=lat, lon=lon, fields=",".join([
         "name",
         "memberships.organization.name",

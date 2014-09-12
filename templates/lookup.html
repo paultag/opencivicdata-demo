@@ -2,16 +2,11 @@
     {{leg.name}}<br />
     <ul>
 {% for membership in leg.memberships %}
-{% if membership.label %}
     <li>
-    {{membership}}
-        {{membership.label}}
-        {{membership.post}}    
-        {% if membership.post %}
-            {{membership.post.label}}
-        {% endif %}
+    {{membership.label}} of {{membership.organization.name}}.  {% if membership.post %}
+    ({{membership.post.role}} for {{membership.post.label}})
+    {% endif %}
     </li>
-{% endif %}
 {% endfor %}
     </ul>
 {% endfor %}
