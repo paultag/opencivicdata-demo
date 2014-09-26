@@ -28,6 +28,12 @@ function locate() {
                 lon
             );
 
+            map.addMarker({
+                lat: lat,
+                lng: lon,
+                title: 'You are Here!'
+            });
+
             $("#results").load("/lookup", {
                 "lat": lat,
                 "lon": lon,

@@ -1,6 +1,6 @@
 {% for leg in legs %}
-    {{leg.name}}<br />
-    {{leg.id}}
+<div class="leg">
+    <b>{{leg.name}}</b><br />
     <ul>
 {% for membership in leg.memberships %}
     {% if membership.organization.classification in ['upper', 'lower', 'legislature'] %}
@@ -18,4 +18,5 @@
     {% endif %}
 {% endfor %}
     </ul>
+</div>
 {% endfor %}

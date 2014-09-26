@@ -12,7 +12,14 @@ html, body {
 
 #prompt {
     padding-top: 10px;
-    float:  right;
-    width:  29%;
+    float:  left;
+    width:  27%;
     height: 100%;
+}
+
+
+.leg {
+    margin:           10px;
+    background-color: #EFEFEF;
+    border:           1px solid #DCDCDC;
 }
